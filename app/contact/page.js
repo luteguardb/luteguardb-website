@@ -95,6 +95,13 @@ export default function ContactPage() {
           <div className="contact-details">
 
             <div className="contact-detail">
+              <span className="contact-detail-label">EMAIL</span>
+              <a href="mailto:luteguard.b@gmail.com">
+                luteguard.b@gmail.com
+              </a>
+            </div>
+
+            <div className="contact-detail">
 
               <span className="contact-detail-label">
                 INQUIRY
