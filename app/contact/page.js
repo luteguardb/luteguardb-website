@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function ContactPage() {
   const [status, setStatus] = useState("");
+  const [statusType, setStatusType] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (event) => {
@@ -11,6 +12,7 @@ export default function ContactPage() {
 
     setIsSubmitting(true);
     setStatus("");
+    setStatusType("");
 
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -25,12 +27,17 @@ export default function ContactPage() {
       });
 
       if (!response.ok) {
-        throw new Error("Form submission failed");
+        throw new Error("Form submission failed.");
       }
 
       form.reset();
-      setStatus("Thank you. Your inquiry has been sent.");
+
+      setStatusType("success");
+      setStatus(
+        "Thank you. Your inquiry has been sent successfully."
+      );
     } catch (error) {
+      setStatusType("error");
       setStatus(
         "문의 전송 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요."
       );
@@ -42,27 +49,32 @@ export default function ContactPage() {
   return (
     <section className="contact-page">
 
-      <div className="page-heading narrow">
+      {/* PAGE INTRO */}
+      <div className="contact-hero">
 
         <div className="eyebrow">
           CONTACT
         </div>
 
         <h1>
-          Start a conversation.
+          Start a
+          <br />
+          conversation.
         </h1>
 
         <p>
           LUTEGUARD-B™, Blue Light Archive,
-          연구 협업 및 비즈니스 제안에 관한
-          문의를 받고 있습니다.
+          연구 협업, 유통 및 비즈니스 제안에 관한
+          문의를 기다립니다.
         </p>
 
       </div>
 
 
+      {/* CONTACT CONTENT */}
       <section className="contact-section">
 
+        {/* LEFT */}
         <div className="contact-intro">
 
           <div className="eyebrow">
@@ -80,9 +92,50 @@ export default function ContactPage() {
             기타 비즈니스 문의를 남겨주세요.
           </p>
 
+          <div className="contact-details">
+
+            <div className="contact-detail">
+
+              <span className="contact-detail-label">
+                INQUIRY
+              </span>
+
+              <span>
+                Business · Partnership · Research
+              </span>
+
+            </div>
+
+            <div className="contact-detail">
+
+              <span className="contact-detail-label">
+                BRAND
+              </span>
+
+              <span>
+                LUTEGUARD-B™
+              </span>
+
+            </div>
+
+            <div className="contact-detail">
+
+              <span className="contact-detail-label">
+                LOCATION
+              </span>
+
+              <span>
+                Ganghwa · Gyodong Island · Korea
+              </span>
+
+            </div>
+
+          </div>
+
         </div>
 
 
+        {/* FORM */}
         <form
           name="contact"
           method="POST"
@@ -92,20 +145,30 @@ export default function ContactPage() {
           className="contact-form"
         >
 
+          {/* Netlify form name */}
           <input
             type="hidden"
             name="form-name"
             value="contact"
           />
 
-          <p className="hidden-field">
+          {/* Spam honeypot - 절대 화면에 보이지 않음 */}
+          <div
+            className="netlify-honeypot"
+            aria-hidden="true"
+          >
             <label>
-              Don't fill this out:
-              <input name="bot-field" />
+              Leave this field empty
+              <input
+                name="bot-field"
+                tabIndex="-1"
+                autoComplete="off"
+              />
             </label>
-          </p>
+          </div>
 
 
+          {/* NAME */}
           <div className="form-field">
 
             <label htmlFor="name">
@@ -117,12 +180,14 @@ export default function ContactPage() {
               name="name"
               type="text"
               required
+              autoComplete="name"
               placeholder="Your name"
             />
 
           </div>
 
 
+          {/* EMAIL */}
           <div className="form-field">
 
             <label htmlFor="email">
@@ -134,12 +199,14 @@ export default function ContactPage() {
               name="email"
               type="email"
               required
+              autoComplete="email"
               placeholder="your@email.com"
             />
 
           </div>
 
 
+          {/* SUBJECT */}
           <div className="form-field">
 
             <label htmlFor="subject">
@@ -157,6 +224,7 @@ export default function ContactPage() {
           </div>
 
 
+          {/* MESSAGE */}
           <div className="form-field">
 
             <label htmlFor="message">
@@ -174,9 +242,10 @@ export default function ContactPage() {
           </div>
 
 
+          {/* SUBMIT */}
           <button
-            className="contact-submit"
             type="submit"
+            className="contact-submit"
             disabled={isSubmitting}
           >
 
@@ -187,10 +256,17 @@ export default function ContactPage() {
           </button>
 
 
+          {/* STATUS */}
           {status && (
-            <p className="form-status">
+            <div
+              className={`form-status ${
+                statusType === "success"
+                  ? "form-success"
+                  : "form-error"
+              }`}
+            >
               {status}
-            </p>
+            </div>
           )}
 
         </form>
