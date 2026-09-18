@@ -309,3 +309,594 @@ h1, h2, h3 { margin-top: 0; }
   .footer-right { text-align: left; }
   .archive-frame { height: 1400px; }
 }
+/* ----------------------------------
+   SHOP
+---------------------------------- */
+
+.shop-page {
+  background: var(--paper);
+}
+
+.shop-grid {
+  padding: 70px 5vw 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.shop-product {
+  border: 1px solid var(--line);
+  background: #faf6ee;
+}
+
+.shop-product-image {
+  min-height: 520px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      #fff9ea,
+      #ead7b7 65%,
+      #d5ba8b
+    );
+}
+
+.second-product {
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      #faf7e8,
+      #ddd8bb 65%,
+      #c1ba92
+    );
+}
+
+.shop-tube {
+  width: 180px;
+  height: 350px;
+
+  border-radius: 12px 12px 25px 25px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ead8b7,
+      #fff8ea 45%,
+      #dfc596
+    );
+
+  box-shadow:
+    0 30px 60px
+    rgba(70, 45, 15, 0.2);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.shop-tube-label {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  font-family: Georgia, serif;
+}
+
+.shop-flower {
+  font-size: 42px;
+  color: var(--gold);
+}
+
+.shop-tube-label small {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.shop-product-info {
+  padding: 42px;
+}
+
+.shop-product-info h2 {
+  font-family: Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+
+.shop-product-info p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.product-price {
+  margin: 28px 0;
+
+  font-family: Georgia, serif;
+  font-size: 26px;
+}
+
+.product-benefits {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+
+  margin-bottom: 30px;
+}
+
+.product-benefits span {
+  border: 1px solid var(--line);
+
+  padding: 7px 10px;
+
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.shop-button {
+  width: 100%;
+  min-height: 52px;
+
+  background: var(--ink);
+  color: white;
+
+  border: 0;
+
+  font-family: Georgia, serif;
+  letter-spacing: 0.07em;
+
+  cursor: default;
+}
+
+.shop-story {
+  padding: 90px 5vw;
+
+  border-top: 1px solid var(--line);
+
+  background: var(--cream);
+}
+
+.shop-story h2 {
+  font-family: Georgia, serif;
+
+  font-size: clamp(
+    42px,
+    5vw,
+    74px
+  );
+
+  font-weight: 400;
+  line-height: 1.05;
+
+  max-width: 750px;
+}
+
+.shop-story p {
+  color: var(--muted);
+
+  max-width: 650px;
+
+  line-height: 1.8;
+
+  margin-bottom: 30px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-product-image {
+    min-height: 400px;
+  }
+
+}
+
+/* ==================================================
+   CONTACT PAGE
+================================================== */
+
+.contact-page {
+  background: var(--paper);
+}
+
+
+/* HERO */
+
+.contact-hero {
+  padding: 90px 5vw 70px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-hero h1 {
+  margin: 0 0 28px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(
+    58px,
+    7vw,
+    108px
+  );
+
+  font-weight: 400;
+
+  line-height: 0.96;
+
+  letter-spacing: -0.035em;
+}
+
+.contact-hero p {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* MAIN AREA */
+
+.contact-section {
+  display: grid;
+
+  grid-template-columns:
+    0.85fr
+    1.15fr;
+
+  gap: 90px;
+
+  padding:
+    85px
+    5vw
+    120px;
+}
+
+
+/* LEFT */
+
+.contact-intro {
+  padding-top: 10px;
+}
+
+.contact-intro h2 {
+  margin:
+    0
+    0
+    30px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(
+    44px,
+    5vw,
+    72px
+  );
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.02em;
+}
+
+.contact-intro > p {
+  max-width: 460px;
+
+  margin-bottom: 55px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* CONTACT DETAILS */
+
+.contact-details {
+  max-width: 470px;
+
+  border-top:
+    1px solid
+    var(--line);
+}
+
+.contact-detail {
+  display: grid;
+
+  grid-template-columns:
+    110px
+    1fr;
+
+  gap: 20px;
+
+  padding:
+    18px
+    0;
+
+  border-bottom:
+    1px solid
+    var(--line);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.contact-detail-label {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.12em;
+
+  color: var(--muted);
+}
+
+
+/* FORM */
+
+.contact-form {
+  position: relative;
+
+  padding:
+    55px
+    55px
+    50px;
+
+  background:
+    var(--cream);
+
+  border:
+    1px solid
+    var(--line);
+}
+
+
+/* FORM FIELDS */
+
+.form-field {
+  margin-bottom: 32px;
+}
+
+.form-field label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 11px;
+
+  letter-spacing: 0.14em;
+}
+
+.form-field input,
+.form-field textarea {
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+
+  padding:
+    10px
+    0
+    15px;
+
+  border: 0;
+
+  border-bottom:
+    1px solid
+    rgba(36, 33, 28, 0.25);
+
+  border-radius: 0;
+
+  outline: none;
+
+  background: transparent;
+
+  color: var(--ink);
+
+  font-family: inherit;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+
+  transition:
+    border-color
+    0.2s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-bottom-color:
+    var(--gold);
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color:
+    rgba(36, 33, 28, 0.38);
+}
+
+.form-field textarea {
+  min-height: 160px;
+
+  resize: vertical;
+}
+
+
+/* SUBMIT */
+
+.contact-submit {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  min-height: 56px;
+
+  margin-top: 8px;
+
+  border:
+    1px solid
+    var(--ink);
+
+  background:
+    var(--ink);
+
+  color: #ffffff;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 13px;
+
+  letter-spacing: 0.1em;
+
+  cursor: pointer;
+
+  transition:
+    background
+    0.2s ease,
+    border-color
+    0.2s ease;
+}
+
+.contact-submit:hover {
+  background:
+    var(--gold);
+
+  border-color:
+    var(--gold);
+}
+
+.contact-submit:disabled {
+  cursor: wait;
+
+  opacity: 0.55;
+}
+
+
+/* SUBMISSION STATUS */
+
+.form-status {
+  margin-top: 24px;
+
+  padding: 15px 18px;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.form-success {
+  background:
+    rgba(94, 118, 73, 0.09);
+
+  border:
+    1px solid
+    rgba(94, 118, 73, 0.25);
+
+  color:
+    #4d633e;
+}
+
+.form-error {
+  background:
+    rgba(140, 59, 45, 0.07);
+
+  border:
+    1px solid
+    rgba(140, 59, 45, 0.22);
+
+  color:
+    #833b31;
+}
+
+
+/* NETLIFY SPAM FIELD
+   화면 밖으로 완전히 이동
+*/
+
+.netlify-honeypot {
+  position: absolute !important;
+
+  left: -10000px !important;
+  top: auto !important;
+
+  width: 1px !important;
+  height: 1px !important;
+
+  overflow: hidden !important;
+
+  opacity: 0 !important;
+
+  pointer-events: none !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  .contact-hero {
+    padding:
+      65px
+      5vw
+      50px;
+  }
+
+  .contact-section {
+    grid-template-columns:
+      1fr;
+
+    gap: 55px;
+
+    padding:
+      55px
+      5vw
+      80px;
+  }
+
+  .contact-form {
+    padding:
+      38px
+      26px;
+  }
+
+  .contact-detail {
+    grid-template-columns:
+      90px
+      1fr;
+  }
+
+}
